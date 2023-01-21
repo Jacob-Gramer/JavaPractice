@@ -24,9 +24,11 @@ public class Main {
         System.out.print("Period (Years): ");
         int payments = scanner.nextInt() * MONTHS_IN_YEAR;
 
-        double mortgage = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, payments)) / (Math.pow(1 + monthlyInterest, payments) - 1);
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        String result = currency.format(mortgage);
+        double mortgage = principal
+                * (monthlyInterest * Math.pow(1 + monthlyInterest, payments))
+                / (Math.pow(1 + monthlyInterest, payments) - 1);
+
+        String result = NumberFormat.getCurrencyInstance().format(mortgage);
 
         System.out.println("Mortgage: " + result);
     }
